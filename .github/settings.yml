@@ -1,0 +1,12 @@
+repository:
+  name: probot-tests
+  description: description of the repo
+  
+  labels:
+    include:
+      - name: wip
+        color: '#cc0010'
+        description: Wip
+      - name: done
+        color: '#01c111'
+        description: done
