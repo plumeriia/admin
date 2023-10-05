@@ -1,11 +1,15 @@
 repository:
-  description: description of the repo
+  name: test-set
+  private: false
   
   labels:
     include:
-      - name: wip
-        color: '#cc0010'
-        description: Wip
+      - name: documentation
+        color: '#0075ca'
+        description: Improvements or additions to documentation
       - name: done
-        color: '#01c111'
+        color: '#01ca11'
         description: done
+      - name: env=dev
+        color: '#DEBC7B'
+        description: env=dev
