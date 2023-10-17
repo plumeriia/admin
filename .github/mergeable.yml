@@ -1,5 +1,21 @@
 version: 2
 mergeable:
+  - when: pull_request.* # Title must begin with "doc", "feat", "fix" and exclude "wip"
+    name: 'Title check'
+    validate:
+      - do: title
+        must_include:
+          regex: 'doc|feat|fix'
+          regex_flag: 'none' # Optional. Specify the flag for Regex. default is 'i', to disable default use 'none'
+          message: 'Title must exclude "doc", "feat", or "fix"'
+        must_exclude:
+         regex: 'wip|WIP'
+         regex_flag: 'none' # Optional. Specify the flag for Regex. default is 'i', to disable default use 'none'
+         message: 'Title must exclude "wip"'
+        begins_with:
+          match: ['doc:','feat:','fix:']
+          message: 'Title must begin with "doc:", "feat:", or "fix:"'
+          
   - when: pull_request.*, pull_request_review.* # Devops project must be selected in PR
     name: 'Project check'
     validate:
