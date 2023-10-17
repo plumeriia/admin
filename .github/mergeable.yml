@@ -22,14 +22,5 @@ mergeable:
     validate:
       - do: project
         must_include:
-          regex: `1`
-          message: `Custom message...`
-        must_exclude:
-          regex: '2'
-          message: 'Custom message...'
-        begins_with:
-          match: '1'
-          message: 'Custom message...'
-        ends_with:
-          match: '1'
-          message: 'Custom message...'
+          regex: '1'
+          message: 'devops project should be selected'
