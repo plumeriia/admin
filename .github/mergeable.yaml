@@ -1,0 +1,18 @@
+version: 2
+mergeable:
+  - when: pull_request.*, pull_request_review.* # Devops project must be selected in PR
+    name: 'Project check'
+    validate:
+      - do: project
+        must_include:
+          regex: `1`
+          message: `Custom message...`
+        must_exclude:
+          regex: '2'
+          message: 'Custom message...'
+        begins_with:
+          match: '1'
+          message: 'Custom message...'
+        ends_with:
+          match: '1'
+          message: 'Custom message...'
